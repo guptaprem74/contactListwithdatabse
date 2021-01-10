@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>
+        <%= title %>
+    </title>
+
+    <!-- Font Awesome CDN Links -->
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" 
+    integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+</head>
+<body>
+    
+    <h1 id="page-heading">
+        <i class="fas fa-address-book"></i>
+         My Contacts List 
+    </h1>
+
+    <div id="contact-list-container">
+        <ul>
+            <% for (let i of contact_List) { %> 
+                <li class="contact">
+                    <div class="details">
+                        <p> <%= i.Name %> </p>
+                        <p> <%= i.Phone %> </p>
+                    </div>
+
+                    <div class="delete-button">
+                        <a href="/delete-contact/?id=<%=i._id %>">
+                            <i class="fas fa-window-close"></i>
+                        </a>
+                    </div>
+                </li>
+
+            <% } %>
+        </ul>
+    </div>
+
+</body>
+</html>
